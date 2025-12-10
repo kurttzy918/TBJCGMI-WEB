@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Church | Home</title>
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="music-control">
+    <button id="musicBtn"><i class="fa-solid fa-music"></i> Music</button>
+</div>
+
+<audio id="bgMusic" src="elevation.mp4.mp3" loop></audio>
+
+    <!-- NAVIGATION -->
+    <nav class="navbar">
+        <h2 class="logo">TorchBearer of Jesus Christ Global Ministries Inc.</h2>
+        <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="mission.html">Mission & Vision</a></li>
+            <li><a href="Sector.html">Sectors</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO CAROUSEL -->
+    <div class="carousel-container">
+        <div class="carousel fade">
+            <img src="c7.png.jpg">
+        </div>
+
+        <div class="carousel fade">
+            <img src="c3.png.jpg">
+        </div>
+
+        <div class="carousel fade">
+            <img src="c4.png.jpg">
+        </div>
+       
+        <div class="carousel fade">
+            <img src="c5.png.jpg">
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+
+    <!-- BIBLE VERSE SECTION -->
+    <section class="verse-section">
+        <h2>Bible Verse of the Day</h2>
+        <p id="verseText">Loading verse...</p>
+    </section>
+    
+
+    <footer>
+        <p>© 2025 TorchBearer of Jesus Christ Global Ministries Inc. | All Rights Reserved</p>
+    </footer>
+
+        <div class="contact-social fade-in">
+        <h3 class="social-title slide-up">Follow Us</h3>
+            <a href="https://www.facebook.com/courteny.madronero/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://github.com/kurttzy918" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <a href="https://gmail.com" target="_blank"><i class="fa-brands fa-google"></i></a>
+        </div>
+    </section>
+
+    <img src="sec.png.jpg" class="page-watermark">
+<script src="script.js"></script>
+
+</body>
+</html>
