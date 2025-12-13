@@ -106,36 +106,6 @@ musicBtn.addEventListener("click", () => {
         musicBtn.innerHTML = '<i class="fa-solid fa-pause"></i> Pause';
     }
     isPlaying = !isPlaying;
-});
-// BUBBLE PARTICLES EFFECT
-function createBubbles() {
-    const container = document.getElementById("bubbleEffects");
 
-    for (let i = 0; i < 25; i++) { // Number of bubbles
-        const bubble = document.createElement("span");
-        bubble.classList.add("bubble");
-
-        let size = Math.random() * 50 + 20; // 20–70px size
-        bubble.style.width = size + "px";
-        bubble.style.height = size + "px";
-
-        bubble.style.left = Math.random() * 100 + "vw";   // X position
-        bubble.style.animationDuration = Math.random() * 6 + 8 + "s"; // Speed
-        bubble.style.animationDelay = Math.random() * 5 + "s"; // Delay
-
-        container.appendChild(bubble);
-    }
-}
-
-createBubbles();
-const animatedItems = document.querySelectorAll(".animated-card, .fade-in, .slide-up");
-
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add("show");
-        }
-    });
-}, { threshold: 0.2 });
-
-animatedItems.forEach(el => observer.observe(el));
+<script>
+</script>
