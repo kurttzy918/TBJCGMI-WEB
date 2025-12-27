@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<img src="sec.png.jpg" class="page-watermark">
+<body>
+     
+<nav class="navbar">
+    <h2 class="logo">Sector C Family</h2>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="mission.html">Mission & Vision</a></li>
+        <li><a href="Sector.html">Sectors</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+       <h1 class="section-title">Sector C Spiritual Leader & Pastors</h1> 
+
+<div class="sector-container horizontal">
+
+  <div class="sector-card">
+    <img src="p.obed.png" alt="Member">
+    <h3>Pastor Obed Salvador</h3>
+    <p>Church Pastor</p>
+  </div>
+
+  <div class="sector-card">
+    <img src="p.tina.png" alt="Member">
+    <h3>Pastora Tina Silla</h3>
+    <p>Sector Leader</p>
+  </div>
+
+  <div class="sector-card">
+    <img src="p.marvin.png" alt="Member">
+    <h3>Pastor Marvin Silla</h3>
+    <p>Church Pastor</p>
+  </div>
+
+  <div class="sector-card">
+    <img src="p.ramil.png.png" alt="Member">
+    <h3>Pastor Ramil Bacongan</h3>
+    <p>Spiritual Adviser</p>
+  </div>
+
+</div>
+<section class="sector-page">
+    <h1>Sector C</h1>
+
+    <p class="sector-description">
+        Sector C is composed of passionate members dedicated to serving in praise and worship,
+        evangelism, and spiritual outreach. We aim to build a strong fellowship grounded in faith,
+        unity, and service to God.
+    </p>
+
+    <div class="vertical-gallery">
+
+        <!-- PHOTO 1 -->
+        <div class="gallery-item">
+        
+            <img src="c1.png.jpg" alt="gallery Photo">
+            <p>Birthday Celebration with Brethrens after service</p>
+            
+            <!-- ACTION BAR -->
+    <div class="action-bar">
+
+        <!-- LIKE -->
+        <div class="like-section">
+            <button class="like-btn" type="button">❤️</button>
+            <span class="like-count">0</span>
+        </div>
+
+        <!-- COMMENT -->
+        <button class="comment-toggle" type="button">💬</button>
+
+        <!-- SHARE -->
+        <button class="share-btn" type="button">🔗</button>
+
+    </div>
+
+    <!-- COMMENT BOX -->
+    <div class="comment-box">
+        <ul class="comment-list"></ul>
+
+        <input type="text" class="comment-input" placeholder="Write a comment...">
+        <button class="comment-btn" type="button">Post</button>
+    </div>
+
+</div>
+   
+        <!-- PHOTO 2 -->
+        <div class="gallery-item">
+            
+            <img src="c2.png.jpg" alt="gallery Photo">
+            <p>Churh Holiday outing</p>
+            
+            <!-- ACTION BAR -->
+    <div class="action-bar">
+
+        <!-- LIKE -->
+        <div class="like-section">
+            <button class="like-btn" type="button">❤️</button>
+            <span class="like-count">0</span>
+        </div>
+
+        <!-- COMMENT -->
+        <button class="comment-toggle" type="button">💬</button>
+
+        <!-- SHARE -->
+        <button class="share-btn" type="button">🔗</button>
+
+    </div>
+
+    <!-- COMMENT BOX -->
+    <div class="comment-box">
+        <ul class="comment-list"></ul>
+
+        <input type="text" class="comment-input" placeholder="Write a comment...">
+        <button class="comment-btn" type="button">Post</button>
+    </div>
+
+</div>
+
+     <!-- PHOTO 3 -->
+        <div class="gallery-item">
+            
+            <img src="c4.png.jpg" alt="gallery Photo">
+            <p>Friday Service</p>
+
+            <!-- ACTION BAR -->
+    <div class="action-bar">
+
+        <!-- LIKE -->
+        <div class="like-section">
+            <button class="like-btn" type="button">❤️</button>
+            <span class="like-count">0</span>
+        </div>
+
+        <!-- COMMENT -->
+        <button class="comment-toggle" type="button">💬</button>
+
+        <!-- SHARE -->
+        <button class="share-btn" type="button">🔗</button>
+
+    </div>
+
+    <!-- COMMENT BOX -->
+    <div class="comment-box">
+        <ul class="comment-list"></ul>
+
+        <input type="text" class="comment-input" placeholder="Write a comment...">
+        <button class="comment-btn" type="button">Post</button>
+    </div>
+
+</div>
+
+</section>
+    <script>
+document.querySelectorAll(".gallery-item").forEach(item => {
+
+    // LIKE
+    const likeBtn = item.querySelector(".like-btn");
+    const likeCount = item.querySelector(".like-count");
+    let count = 0;
+    let liked = false;
+
+    likeBtn.addEventListener("click", () => {
+        liked = !liked;
+        likeBtn.classList.toggle("liked");
+        count += liked ? 1 : -1;
+        likeCount.textContent = count;
+
+        // Floating heart
+        const heart = document.createElement("span");
+        heart.className = "floating-heart";
+        heart.textContent = "❤️";
+
+        const rect = likeBtn.getBoundingClientRect();
+        heart.style.left = rect.left + rect.width / 2 + "px";
+        heart.style.top = rect.top + "px";
+
+        document.body.appendChild(heart);
+        setTimeout(() => heart.remove(), 1500);
+    });
+
+    // COMMENT TOGGLE
+    const commentToggle = item.querySelector(".comment-toggle");
+    const commentBox = item.querySelector(".comment-box");
+
+    commentToggle.addEventListener("click", () => {
+        commentBox.style.display =
+            commentBox.style.display === "block" ? "none" : "block";
+    });
+
+    // POST COMMENT
+    const commentBtn = item.querySelector(".comment-btn");
+    const commentInput = item.querySelector(".comment-input");
+    const commentList = item.querySelector(".comment-list");
+
+    commentBtn.addEventListener("click", () => {
+        if (commentInput.value.trim() === "") return;
+
+        const li = document.createElement("li");
+        li.textContent = commentInput.value;
+        commentList.appendChild(li);
+
+        commentInput.value = "";
+    });
+
+    // SHARE
+    const shareBtn = item.querySelector(".share-btn");
+    shareBtn.addEventListener("click", async () => {
+        if (navigator.share) {
+            await navigator.share({
+                title: "Gallery Photo",
+                text: "Check this out!",
+                url: window.location.href
+            });
+        } else {
+            navigator.clipboard.writeText(window.location.href);
+            alert("Link copied!");
+        }
+    });
+
+});
+</script>
