@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Torch Bearer of Jesus Christ Global Ministries Inc.</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Video Background -->
+    <div class="video-background" id="videoBackground">
+        <video autoplay muted loop playsinline>
+            <source src="clip.mp4" type="video/mp4">
+            <source src="clip.mp4" type="video/webm">
+            <!-- Fallback image if video doesn't load -->
+            <img src="3.jpeg" alt="Church background">
+        </video>
+        <div class="video-overlay"></div>
+    </div>
+
+    <!-- Header with Navigation -->
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="sec.png.jpg" alt="TBJCGMI Logo" class="logo-img">
+                        <span class="logo-short">TBJCGMI</span>
+                        <h1 class="logo-text">
+                            Jesus is the only way to Heaven.
+                        </h1>
+                    </a>
+                </div>
+
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu">
+                    <span class="hamburger"></span>
+                </button>
+
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html" class="nav-link active">Home</a></li>
+                    <li><a href="mission.html" class="nav-link">Mission & Vision</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="nav-link">Sectors <i class="fas fa-chevron-down dropdown-icon"></i></a>
+                        <div class="dropdown-content">
+                            <a href="#">Sector A</a>
+                            <a href="#">Sector C</a>
+                            <a href="#">Sector D</a>
+                            <a href="#">Sector F</a>
+                            <a href="#">Sector G</a>
+                            <a href="#">Sector I</a>
+                            <a href="#">Sector K</a>
+                        </div>
+                    </li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li><a href="#" class="nav-link donate-btn">Donate</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+       <!-- Bible Verse Section -->
+<section class="bible-verse-section">
+    <div class="container">
+        <div class="bible-verse-wrapper">
+            <!-- Bible Icon -->
+            <div class="bible-icon">
+                <i class="fas fa-bible"></i>
+            </div>
+            
+            <!-- Current Verse Display -->
+            <div class="bible-verse" id="currentVerse">
+                <p class="verse-text" id="verseText">
+                    "For God so loved the world, that he gave his only Son, that whoever believes in him should not perish but have eternal life."
+                </p>
+                <span class="verse-reference" id="verseReference">- John 3:16</span>
+            </div>
+            
+            <!-- Progress Dots -->
+            <div class="progress-dots-container">
+                <div class="progress-dots" id="progressDots">
+                    <!-- Dots will be added by JavaScript -->
+                </div>
+            </div>
+            
+            <!-- Controls -->
+            <div class="verse-controls" id="verseControls">
+                <button class="control-btn verse-btn" id="prevBtn" aria-label="Previous verse">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                
+                <div class="auto-control">
+                    <button class="control-btn auto-btn" id="autoBtn" aria-label="Toggle auto play">
+                        <i class="fas fa-pause" id="autoIcon"></i>
+                        <span id="autoText">Pause Auto</span>
+                    </button>
+                </div>
+                
+                <button class="control-btn verse-btn" id="nextBtn" aria-label="Next verse">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            
+            <!-- Additional Controls -->
+            <div class="additional-controls">
+                <button class="control-btn random-btn" id="randomBtn" aria-label="Random verse">
+                    <i class="fas fa-random"></i>
+                    <span>Random</span>
+                </button>
+            </div>
+            
+            <!-- Action Buttons -->
+            <div class="action-buttons" id="actionButtons">
+                <button class="action-btn copy-btn" id="copyBtn" aria-label="Copy verse to clipboard">
+                    <i class="fas fa-copy"></i>
+                    <span class="btn-text">Copy Verse</span>
+                </button>
+                
+                <button class="action-btn share-btn" id="shareBtn" aria-label="Share verse">
+                    <i class="fas fa-share-alt"></i>
+                    <span class="btn-text">Share Verse</span>
+                </button>
+                
+                <button class="action-btn save-btn" id="saveBtn" aria-label="Save verse">
+                    <i class="fas fa-bookmark"></i>
+                    <span class="btn-text">Save</span>
+                </button>
+            </div>
+            
+            <!-- Verse Counter -->
+            <div class="verse-counter">
+                <span id="currentVerseNum">1</span> / <span id="totalVerses">10</span> Verses
+            </div>
+            
+            <!-- Verse Info -->
+            <div class="verse-info">
+                <p class="verse-note">
+                    <i class="fas fa-info-circle"></i>
+                    Verses change automatically every 5 seconds. Click to pause or use navigation.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-overlay"></div>
+            <div class="container">
+                <h1 class="hero-title">
+                    Torch Bearer of <span class="jesus">Jesus Christ</span> Global Ministries Inc.
+                </h1>
+                <p class="hero-subtitle">Igniting hearts, transforming lives, spreading the Gospel to all nations</p>
+                <div class="hero-buttons">
+                    <a href="#" class="btn btn-primary">Join Our Community</a>
+                    <a href="#" class="btn btn-secondary">Watch Sermons</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Christmas Party Section -->
+<section class="events-section">
+    <div class="container">
+        <h2 class="section-title">Christmas Party 2025</h2>
+        <p class="section-subtitle">Celebrating the birth of our Savior Lord Jesus Christ with joy and fellowship</p>
+        
+        <div class="carousel-container">
+            <div class="carousel">
+                <div class="carousel-track" id="carouselTrack">
+                    <!-- Original Set -->
+                    <div class="carousel-item">
+                        <img src="sc1.png" alt="Christmas Celebration">
+                        <div class="image-overlay">
+                            
+                
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="sc2.png" alt="Christmas Celebration">
+                        <div class="image-overlay">
+                            
+                            
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="sc3.png" alt="Christmas Celebration">
+                        <div class="image-overlay">
+                            
+                            
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="sc4.png" alt="Christmas Celebration">
+                        <div class="image-overlay">
+                            
+                            
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="sc5.png" alt="Christmas Celebration">
+                        <div class="image-overlay">
+                            
+                            
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="sc6.png" alt="Christmas Celebration">
+                        <div class="image-overlay">
+                            
+                            
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="sc7.png" alt="Christmas Celebration">
+                        <div class="image-overlay">
+                            
+                            
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="sc8.png" alt="Christmas Celebration">
+                        <div class="image-overlay">
+                            
+                            
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="sc9.png" alt="Christmas Celebration">
+                        <div class="image-overlay">
+                            
+                            
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="sc10.png" alt="Christmas Celebration">
+                        <div class="image-overlay">
+                            
+                            
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="sc11.png" alt="Christmas Celebration">
+                        <div class="image-overlay">
+                            
+                            
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="sc12.png" alt="Christmas Celebration">
+                        <div class="image-overlay">
+                            
+                            
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="sc13.png" alt="Christmas Celebration">
+                        <div class="image-overlay">
+                            
+                            
+                        </div>
+                    </div>
+                    
+                    <!-- Duplicate Set for Infinite Effect -->
+                    <div class="carousel-item">
+                        <img src="sc1.png" alt="Christmas Celebration">
+                        <div class="image-overlay">
+                            
+                            
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="sc2.png" alt="Christmas Celebration">
+                        <div class="image-overlay">
+                            
+                            
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="sc3.png" alt="Christmas Celebration">
+                        <div class="image-overlay">
+                            
+                            
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="sc4.png" alt="Christmas Celebration">
+                        <div class="image-overlay">
+                            
+                            
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="sc5.png" alt="Christmas Celebration">
+                        <div class="image-overlay">
+                            
+                            
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="sc6.png" alt="Christmas Celebration">
+                        <div class="image-overlay">
+                            
+                           
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="sc7.png" alt="Christmas Celebration">
+                        <div class="image-overlay">
+                            
+                            
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="sc8.png" alt="Christmas Celebration">
+                        <div class="image-overlay">
+                            
+                            
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="sc9.png" alt="Christmas Celebration">
+                        <div class="image-overlay">
+                            
+                            
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="sc10.png" alt="Christmas Celebration">
+                        <div class="image-overlay">
+                            
+                           
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="sc11.png" alt="Christmas Celebration">
+                        <div class="image-overlay">
+                            
+                            
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="sc12.png" alt="Christmas Celebration">
+                        <div class="image-overlay">
+                            <
+                           
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="sc13.png" alt="Christmas Celebration">
+                        <div class="image-overlay">
+                            
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Navigation Buttons -->
+            <button class="carousel-btn carousel-btn-prev" id="carouselPrev">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="carousel-btn carousel-btn-next" id="carouselNext">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            
+            <!-- Speed Controls -->
+            <div class="speed-controls">
+                <button class="speed-btn" data-speed="20">
+                    <i class="fas fa-tachometer-alt"></i> Slow
+                </button>
+                <button class="speed-btn active" data-speed="15">
+                    <i class="fas fa-tachometer-alt"></i> Normal
+                </button>
+                <button class="speed-btn" data-speed="10">
+                    <i class="fas fa-tachometer-alt"></i> Fast
+                </button>
+                <button class="speed-btn" data-speed="5">
+                    <i class="fas fa-bolt"></i> Very Fast
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+                <!-- Leaders Carousel Section -->
+        <section class="leaders-section">
+            <div class="container">
+                <h2 class="section-title">Our <span class="highlight">Leaders</span></h2>
+                <p class="section-subtitle">Meet the dedicated servants guiding our ministry with faith and love</p>
+                
+                <div class="leaders-carousel-container">
+                    <div class="leaders-carousel">
+                        <div class="leaders-carousel-track" id="leadersCarouselTrack">
+                            <!-- Leader 1 -->
+                            <div class="leader-card">
+                                <div class="leader-image-container">
+                                    <div class="leader-circle">
+                                        <img src="p.ramil.png.png" 
+                                             alt="Pastor John" class="leader-photo">
+                                    </div>
+                                    <div class="leader-ring"></div>
+                                    <div class="leader-glow"></div>
+                                </div>
+                                <div class="leader-content">
+                                    <h3 class="leader-name">Pastor Ramil</h3>
+                                    <p class="leader-role">Senior Pastor</p>
+                        
+                                    <div class="leader-social">
+                                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Leader 2 -->
+                            <div class="leader-card">
+                                <div class="leader-image-container">
+                                    <div class="leader-circle">
+                                        <img src="p.norbel.png.png" 
+                                             alt="Sister Mary" class="leader-photo">
+                                    </div>
+                                    <div class="leader-ring"></div>
+                                    <div class="leader-glow"></div>
+                                </div>
+                                <div class="leader-content">
+                                    <h3 class="leader-name">Pastor Norbel </h3>
+                                    <p class="leader-role">Pastor</p>
+                                    
+                                    <div class="leader-social">
+                                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Leader 3 -->
+                            <div class="leader-card">
+                                <div class="leader-image-container">
+                                    <div class="leader-circle">
+                                        <img src="p.marvin.png" 
+                                             alt="Brother David" class="leader-photo">
+                                    </div>
+                                    <div class="leader-ring"></div>
+                                    <div class="leader-glow"></div>
+                                </div>
+                                <div class="leader-content">
+                                    <h3 class="leader-name">Pastor Marvin Silla</h3>
+                                    <p class="leader-role">Pastor</p>
+                                    
+                                    <div class="leader-social">
+                                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Leader 4 -->
+                            <div class="leader-card">
+                                <div class="leader-image-container">
+                                    <div class="leader-circle">
+                                        <img src="p.obed.png" 
+                                             alt="Sister Sarah" class="leader-photo">
+                                    </div>
+                                    <div class="leader-ring"></div>
+                                    <div class="leader-glow"></div>
+                                </div>
+                                <div class="leader-content">
+                                    <h3 class="leader-name">Pastor Obed Salvador</h3>
+                                    <p class="leader-role">Pastor</p>
+                                    
+                                    <div class="leader-social">
+                                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Leader 5 -->
+                            <div class="leader-card">
+                                <div class="leader-image-container">
+                                    <div class="leader-circle">
+                                        <img src="p.tina.png" 
+                                             alt="Pastor Michael" class="leader-photo">
+                                    </div>
+                                    <div class="leader-ring"></div>
+                                    <div class="leader-glow"></div>
+                                </div>
+                                <div class="leader-content">
+                                    <h3 class="leader-name">Pastora Tina Silla</h3>
+                                    <p class="leader-role">Pastora</p>
+                                    
+                                    <div class="leader-social">
+                                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Leader 6 -->
+                            <div class="leader-card">
+                                <div class="leader-image-container">
+                                    <div class="leader-circle">
+                                        <img src="p.joana.png.png" 
+                                             alt="Sister Grace" class="leader-photo">
+                                    </div>
+                                    <div class="leader-ring"></div>
+                                    <div class="leader-glow"></div>
+                                </div>
+                                <div class="leader-content">
+                                    <h3 class="leader-name">Pastora Joana Tatad</h3>
+                                    <p class="leader-role">Pastora</p>
+                                    
+                                    <div class="leader-social">
+                                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Navigation Buttons -->
+                    <button class="leaders-carousel-btn leaders-carousel-prev" id="leadersCarouselPrev">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="leaders-carousel-btn leaders-carousel-next" id="leadersCarouselNext">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    
+                    <!-- Dots Indicator -->
+                    <div class="leaders-carousel-dots" id="leadersCarouselDots">
+                        <!-- Dots will be added by JavaScript -->
+
+                         <!-- After the dots indicator, add: -->
+    <div class="leaders-carousel-status">
+    <button class="carousel-play-pause" id="leadersPlayPause">
+        <i class="fas fa-pause"></i>
+    </button>
+    <span>Auto-scroll: <span id="leadersSpeedStatus">50s</span></span>
+</div>
+<div class="leaders-speed-controls">
+    <button class="speed-control-btn" data-speed="70">
+        <i class="fas fa-snail"></i> Slow
+    </button>
+    <button class="speed-control-btn active" data-speed="50">
+        <i class="fas fa-walking"></i> Normal
+    </button>
+    <button class="speed-control-btn" data-speed="30">
+        <i class="fas fa-running"></i> Fast
+    </button>
+    <button class="speed-control-btn" data-speed="15">
+        <i class="fas fa-bolt"></i> Very Fast
+    </button>
+</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Parallax Sections -->
+        <section class="parallax" style="background-image:url('images/hero1.jpg')">
+            <div class="parallax-overlay"></div>
+            <div class="container">
+                <h2>Our Mission</h2>
+                <p>To be the light of the world and to go and make disciples of all nations and to lead and teach people that Jesus Christ is only way to salvation upon forgiveness of sins.</p>
+                <h3>Our Vision</h3>
+                <p>The Torch Bearer of Jesus Christ Global Ministries is bound by the very word of God empowered by the Holy Spirit to be the witness in the Middle East, and in the Philippines and to the uttermost.</p>
+            
+              </div>
+        </section>
+
+        <section class="parallax" style="background-image:url('3.jpeg')">
+            <div class="parallax-overlay"></div>
+            <div class="container">
+                <h2>Worship With Us</h2>
+                <p>Join our services every Friday for powerful worship and teaching</p>
+            </div>
+        </section>
+
+        <section class="parallax" style="background-image:url('received_1863417624547517.jpeg')">
+            <div class="parallax-overlay"></div>
+            <div class="container">
+                <h2>Connect & Serve</h2>
+                <p>Find your place in our ministry and make a difference</p>
+            </div>
+        </section>
+
+        <!-- Ministry Info -->
+        <section class="ministry-info">
+            <div class="container">
+                <h2 class="section-title">Our Ministries</h2>
+                <div class="ministry-grid">
+                    <div class="ministry-card">
+                        <div class="ministry-icon">
+                            <i class="fas fa-hands-praying"></i>
+                        </div>
+                        <h3>Devotional Prayer</h3>
+                        <p>Join our intercessory prayer every thursday night.</p>
+                    </div>
+                    <div class="ministry-card">
+                        <div class="ministry-icon">
+                            <i class="fas fa-music"></i>
+                        </div>
+                        <h3>Worship Team</h3>
+                        <p>Use your musical gifts to lead others into God's presence.</p>
+                    </div>
+                    <div class="ministry-card">
+                        <div class="ministry-icon">
+                            <i class="fas fa-children"></i>
+                        </div>
+                        <h3>Youth Ministry</h3>
+                        <p>Engaging programs for children and teenagers to grow in faith.</p>
+                    </div>
+                    <div class="ministry-card">
+                        <div class="ministry-icon">
+                            <i class="fas fa-hand-holding-heart"></i>
+                        </div>
+                        <h3>Outreach</h3>
+                        <p>Serving our community and sharing God's love with those in need.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="sec.png.jpg" alt="TBJCGMI Logo">
+                    <h3>TBJCGMI</h3>
+                    <p>Jesus is the only way to Heaven.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="mission.html">Mission & Vision</a></li>
+                        <li><a href="#">Sectors</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Alhamra, Jeddah Kindgdom of Saudi Arabia</p>
+                    <p><i class="fas fa-phone"></i> (123) 456-7890</p>
+                    <p><i class="fas fa-envelope"></i> TBJCGMI@gmail.com</p>
+                </div>
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>TBJCGMI &copy; <span id="currentYear"></span> | "Torch Bearer of Jesus Christ Global Ministries Inc."</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="bible-verse.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
